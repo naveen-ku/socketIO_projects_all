@@ -1,0 +1,13 @@
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+
+<script>
+    const socket = io('http://localhost:3000');
+    console.log(socket);
+
+    socket.on('connect',(data)=>{
+        socket.on('welcome',(message)=>{
+            console.log(message);
+        });
+        socket.emit('message',{data: " This is from client side socket !!!"});
+    }) 
+</script>
